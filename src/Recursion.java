@@ -40,12 +40,24 @@ public class Recursion {
 		}
 	}
 	
-	public static int fibonacci(int num){
-		if(num <= 1) return num;
-		return fibonacci(num - 1) + fibonacci(num - 2);
+	/**
+	 * Tail fibonacci : perform calculation first then execute the recursive call
+	 * @param num : number of fibonacci.
+	 * @param next : next index of fibonacci.
+	 * @param start : start index of fibonacci.
+	 * @return result of the fibonacci
+	 */
+	public static int fibonacci(int num, int next, int start){
+		if(num == 0) return start;
+		if(num == 1) return next;
+		return fibonacci(num - 1, start+next, next);
+
 	}
 	
-	
+	/**
+	 * Run the program.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		//new list
 		List<String> list = new ArrayList<String>();
@@ -66,10 +78,8 @@ public class Recursion {
 		printList(unique(list));
 		
 		System.out.println();
-		
-		for (int i = 0 ; i <= 5 ; i++){
-			System.out.println(fibonacci(i));
-		}
+		//print tail fibonacci.
+		System.out.println(fibonacci(10, 1, 0));
 		
 	}
 }
