@@ -24,6 +24,10 @@ public class Recursion {
 		return list;
 	}
 	
+	/**
+	 * Print the list 
+	 * @param list
+	 */
 	public static void printList(List list){
 		boolean isFirst = true;
 		for (Object result : list) {
@@ -34,6 +38,11 @@ public class Recursion {
 				System.out.print(", "+result);
 			}
 		}
+	}
+	
+	public static int fibonacci(int num){
+		if(num <= 1) return num;
+		return fibonacci(num - 1) + fibonacci(num - 2);
 	}
 	
 	
@@ -55,5 +64,12 @@ public class Recursion {
 		System.out.println();
 		//print the non duplicate list
 		printList(unique(list));
+		
+		System.out.println();
+		
+		for (int i = 0 ; i <= 5 ; i++){
+			System.out.println(fibonacci(i));
+		}
+		
 	}
 }
