@@ -47,13 +47,16 @@ public class Recursion {
 	 * @param start : start index of fibonacci.
 	 * @return result of the fibonacci
 	 */
-	public static long fibonacci(long num, long next,long start){
+	public static long helper(int num, long next,long start){
 		if(num == 0) return start;
 		if(num == 1) return next;
-		return fibonacci(num - 1, start+next, next);
+		return helper(num - 1, start+next, next);
 
 	}
 	
+	public static long fibonacci(int nums){
+		return helper(nums,1,0);
+	}
 	/**
 	 * Run the program.
 	 * @param args
@@ -79,7 +82,7 @@ public class Recursion {
 		
 		System.out.println();
 		//print tail fibonacci.
-		System.out.println(fibonacci(40, 1, 0));
+		System.out.println(fibonacci(40));
 		
 	}
 }
