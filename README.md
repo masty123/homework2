@@ -13,7 +13,7 @@ public static long fibonacci(int n) {
 }
 ```
 
-4.1 : This method recurses too many times.  Every call will call two more calls and when n is large that is a lot of recursion(O(?n)).
+4.1 : This method recurses too many times.  Every call will call two more calls and when n is large that is a lot . Each function call creates a stack frame to store information about the invocation and return value.
 
 
 
